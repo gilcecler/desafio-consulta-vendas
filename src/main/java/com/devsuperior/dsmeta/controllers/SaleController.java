@@ -36,4 +36,12 @@ public class SaleController {
 		return ResponseEntity.ok(dto);
 	}
 
+	@GetMapping(value = "/summary")
+	public ResponseEntity<Page<SaleMinDTO>> summary(
+			@RequestParam(name = "minDate", defaultValue = "") String minDate,
+			@RequestParam(name = "maxDate", defaultValue = "") String maxDate, Pageable pageable) {
+		Page<SaleMinDTO> dto = service.summary(minDate, maxDate, pageable);
+		return ResponseEntity.ok(dto);
+	}
+
 }

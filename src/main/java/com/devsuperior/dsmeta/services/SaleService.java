@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.devsuperior.dsmeta.dto.SaleMinDTO;
 import com.devsuperior.dsmeta.dto.SaleWithSellerDTO;
 import com.devsuperior.dsmeta.entities.Sale;
+import com.devsuperior.dsmeta.projections.SummaryProjection;
 import com.devsuperior.dsmeta.repositories.SaleRepository;
 
 @Service
@@ -37,6 +38,21 @@ public class SaleService {
 		Page<Sale> result = repository.searchByName(initialDate, finalDate, name, pageable);
 		return result.map(x -> new SaleWithSellerDTO(x));
 	}
+	
+	public Page<SaleMinDTO> summary(String minDate, String maxDate,Pageable pageable) {
+		LocalDate finalDate = maxDate.equals("") ? LocalDate.ofInstant(Instant.now(), ZoneId.systemDefault()) : LocalDate.parse(maxDate);
+		LocalDate initialDate = minDate.equals("") ? finalDate.minusYears(1L) : LocalDate.parse(minDate);
+
+		 Page<SummaryProjection> entity = repository.summary(initialDate, finalDate, pageable);
+		 		 
+		 Page<SaleMinDTO> dto = entity.map(x-> new SaleMinDTO(x.getsellerName(),x.gettotalAmount()));
+			return dto;
+		
+		
+	
+		
+	 }
+	
 
 
 }

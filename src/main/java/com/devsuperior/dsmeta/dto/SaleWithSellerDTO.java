@@ -5,8 +5,8 @@ import com.devsuperior.dsmeta.entities.Sale;
 
 public class SaleWithSellerDTO {
 	private Long id;
-	private Double amount;
 	private LocalDate date;
+	private Double amount;
 	private String sellerName;
 
 	public SaleWithSellerDTO(Long id, Double amount, LocalDate date) {
@@ -36,7 +36,7 @@ public class SaleWithSellerDTO {
 		return amount;
 	}
 
-	public String getName() {
+	public String getsellerName() {
 		return sellerName;
 	}
 
