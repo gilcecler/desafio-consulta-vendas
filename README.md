@@ -6,5 +6,5 @@
 (https://github.com/gilcecler/desafio-consulta-vendas/blob/main/04-desafio-jpa.pdf)
 
 ###  Aprovação
-<img src="04-desafio-jpa" alt="04-desafio-jpa">
+<img src="04-desafio-jpa.png" alt="04-desafio-jpa">
 
