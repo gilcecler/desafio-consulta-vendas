@@ -1,10 +1,10 @@
 # Desafio do Módulo 4 do Spring Profissional 
 
-###  Spring JPA
+###  JPA, consultas SQL e JPQL
 
 ## ☕ Regras para o Desafio
-(https://github.com/gilcecler/bds/blob/desafio1/desafio01.pdf)
+(https://github.com/gilcecler/desafio-consulta-vendas/blob/main/04-desafio-jpa.pdf)
 
 ###  Aprovação
-<img src="compIjecao.png" alt="componente">
+<img src="04-desafio-jpa" alt="04-desafio-jpa">
 
